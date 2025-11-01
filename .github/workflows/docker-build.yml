@@ -37,6 +37,6 @@ jobs:
         platforms: linux/amd64,linux/arm64  # 多平台
         push: true  # 直接推送
         tags: |
-          ghcr.io/hypooo/-web-proxy:latest
+          ghcr.io/hypooo/web-proxy:latest
         cache-from: type=gha  # 使用 GitHub Actions 缓存加速
         cache-to: type=gha,mode=max
