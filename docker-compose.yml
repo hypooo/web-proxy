@@ -1,0 +1,8 @@
+services:
+  web-proxy:
+    build: .
+    container_name: web-proxy-server
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    
