@@ -3,8 +3,6 @@ name: Build and Push Docker Image
 on:
   push:
     branches: [ main ]  # 触发条件：推送到 main 分支
-  pull_request:
-    branches: [ main ]  # PR 时也构建（可选，用于测试）
 
 jobs:
   build-and-push:
@@ -34,7 +32,7 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         context: .  # 构建上下文（当前目录）
-        platforms: linux/amd64,linux/arm64  # 多平台
+        platforms: linux/amd64,linux/arm64,linux/arm/v7  # 多平台
         push: true  # 直接推送
         tags: |
           ghcr.io/hypooo/web-proxy:latest
